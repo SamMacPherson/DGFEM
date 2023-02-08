@@ -23,9 +23,8 @@ Notes:
 the main loop in Fortran, so the preprocessing script which calculates matrices needed for grid-related calculations still uses the Hesthaven Matlab
 code.
 
--The code requires Intel Fortran compilers and Intel MKL, tested with 2023.0.0 version
+-The code requires Intel Fortran compilers and Intel MKL, tested with 2023.0.0 version on Linux.
 
--I would advise to use on Linux HPC. Tested with 2023.0.0 
 
 -There are two test cases that I used. Shear flow which I compared with Hesthavens book, and the main test case of Zeitoun. I have provided some
 meshes I used for these.

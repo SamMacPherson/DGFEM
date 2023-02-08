@@ -1,6 +1,0 @@
-
-# Fortran code with debug enabled
-ifort /debug /traceback /heap-arrays /fp:precise /Qmkl /real-size:64 GlobalVariables.f90 MatrixOperations.f90 Geometric.f90  PrimConTransformation.f90 Fluxes.f90 BCandIC.f90 CNSSubroutines.f90 Load.f90 SolverCNS.f90 /o a
-
-
-ifort /heap-arrays /Qipo /O2 /fp:precise /Qmkl /real-size:64 GlobalVariables.f90 MatrixOperations.f90 Geometric.f90  PrimConTransformation.f90 Fluxes.f90 BCandIC.f90 CNSSubroutines.f90 Load.f90 SolverCNS.f90 /o a

@@ -1,0 +1,35 @@
+Making a Mesh:
+
+All the examples that are presently in the /Grids folder were constructed in Pointwise. 
+To ensure the correct .neu file format is generated, select Gambit as the solver.
+
+Running Code:
+0 - Compile, using either the bash shell script for Linux, or by copying and pasting the command line prompt in CompileWindows.txt 
+    for windows (Only need to do once unless adding to code)
+1 - Select settings you want to run in SettingsAndParameters.ini
+2 - Run the Matlab preprocessing script to generate grid information
+3 - Run the resulting a.out (Linux), or a.exe (windows)
+
+Analysing Results:
+
+The results are in a Paraview friendly format, and can be read with all time information as well as for a single timestep.
+For more efficient analysis (not just visualisation), I'd recommend either Python or Matlab, as the data can be resaved 
+into more efficient binary file formats for quicker loading and lower data footprint.
+
+For Paraview, use the "TableToPoints" - "Delauny2D" filters to visualise the data.
+
+Notes:
+- "MatlabCodes" contains all the relevant files downloaded straight from Hesthaven and Warbutons github. I focused on re writing
+the main loop in Fortran, so the preprocessing script which calculates matrices needed for grid-related calculations still uses the Hesthaven Matlab
+code.
+
+-The code requires Intel Fortran compilers and Intel MKL, tested with 2023.0.0 version
+
+-I would advise to use on Linux HPC. Tested with 2023.0.0 
+
+-There are two test cases that I used. Shear flow which I compared with Hesthavens book, and the main test case of Zeitoun. I have provided some
+meshes I used for these.
+
+-The preprocessing script only has to be run once per grid (it is grid dependant only) so can be processed once and used for many simulations as long
+as the grid is unchanged. Command for Linux CLI: matlab -nodisplay -r "cd $(pwd); run('PreProcessingScript');exit"
+
